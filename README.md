@@ -14,3 +14,9 @@ It is useful in the cases when:
 This script is usable as is, however, it is meant to be extended by a child class that would form xPath queries etc. The sample of such child class is provided in XMLAdminMenu.php.
 
 The XML file for the menu is completely custom, no constraints are implied on which tags and attributes you use. Therefore, I chose not to provide any sample XML files.
+
+Example of usage:
+$xml_menu_obj = new XMLMenu('my_xml.xml', 'my_schema.xsd');
+$menu_array = $xml_menu_obj->setMenu(true);
+
+If a schema is provided, XML has to be valid. Schema should be explicitly passed when instantiating, references to schema in XML file will not be honoured.
